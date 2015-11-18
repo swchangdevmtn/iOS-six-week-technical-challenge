@@ -15,7 +15,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func pairButtonTapped(sender: AnyObject) {
         
         //pair all in entitiesA
+        let count = EntityController.sharedController.entitiesA.count
+        var shuffledArray = EntityController.sharedController.entitiesA
+        shuffledArray.shuffleInPlace()
         
+        for var i = 0; i < count; i += 2 {
+            if i+1 >= count {
+                shuffledArray[i].pair = "Alone"
+            } else {
+                shuffledArray[i].pair = shuffledArray[i+1].name
+                shuffledArray[i+1].pair = shuffledArray[i].name
+            }
+        }
+        EntityController.sharedController.entitiesA = shuffledArray
+        tableViewA.reloadData()
     }
     
     @IBAction func randomButtonTapped(sender: AnyObject) {
@@ -38,6 +51,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let entityA = EntityController.sharedController.entitiesA[indexPath.row]
+            
+            EntityController.sharedController.removeEntityA(entityA)
+            
+            // Delete the row from the table view
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

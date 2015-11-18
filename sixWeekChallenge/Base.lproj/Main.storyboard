@@ -38,6 +38,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="Sqq-3m-fed"/>
                                                 </constraints>
                                                 <state key="normal" title="Randomize"/>
+                                                <connections>
+                                                    <action selector="randomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z4G-tS-dva"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzt-cc-UUr">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="25"/>
@@ -54,8 +57,8 @@
                                             <constraint firstItem="hir-ar-rtK" firstAttribute="width" secondItem="Qzt-cc-UUr" secondAttribute="width" id="cno-uk-q5U"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="znB-sv-JFi">
-                                        <rect key="frame" x="0.0" y="95" width="560" height="188"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="znB-sv-JFi">
+                                        <rect key="frame" x="0.0" y="95" width="560" height="441"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listACell" id="9gp-v6-QoS">
@@ -75,56 +78,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Vxn-Un-Co0"/>
                                         </connections>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-Dy-91o">
-                                        <rect key="frame" x="0.0" y="303" width="560" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-t8-dfb">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="Bdx-w6-anb"/>
-                                                </constraints>
-                                                <state key="normal" title="Randomize"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-Qp-v2J">
-                                                <rect key="frame" x="280" y="0.0" width="280" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="vS9-sy-D2Z"/>
-                                                </constraints>
-                                                <state key="normal" title="Add"/>
-                                                <connections>
-                                                    <segue destination="Ec5-jL-QZq" kind="show" identifier="toAddToListB" id="bdB-E3-sfM"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="6Ml-t8-dfb" firstAttribute="width" secondItem="2rJ-Qp-v2J" secondAttribute="width" id="yMS-dE-LOc"/>
-                                        </constraints>
-                                    </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U7A-f9-Rc9">
-                                        <rect key="frame" x="0.0" y="348" width="560" height="188"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listBCell" id="ehZ-nN-CA8">
-                                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehZ-nN-CA8" id="GBZ-Za-Exc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <segue destination="Ec5-jL-QZq" kind="show" identifier="toEditFromListB" id="t5s-rk-cZK"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="BTo-D3-c3s"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="ccC-hy-ldU"/>
-                                        </connections>
-                                    </tableView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="znB-sv-JFi" firstAttribute="height" secondItem="U7A-f9-Rc9" secondAttribute="height" id="ouv-SZ-Kim"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -138,17 +92,16 @@
                     <navigationItem key="navigationItem" id="SO2-lL-Vcl"/>
                     <connections>
                         <outlet property="tableViewA" destination="znB-sv-JFi" id="5xh-Ac-JiQ"/>
-                        <outlet property="tableViewB" destination="U7A-f9-Rc9" id="Hrn-Pg-19F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1090" y="312"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Edit View Controller-->
         <scene sceneID="KVh-2C-Uli">
             <objects>
-                <viewController id="Ec5-jL-QZq" sceneMemberID="viewController">
+                <viewController id="Ec5-jL-QZq" customClass="AddEditViewController" customModule="sixWeekChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zS7-Jn-pcN"/>
                         <viewControllerLayoutGuide type="bottom" id="fz2-pu-Jg9"/>
@@ -171,6 +124,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sM2-dh-4t6">
                                 <rect key="frame" x="283" y="152" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Ec5-jL-QZq" eventType="touchUpInside" id="k08-rK-JQg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -184,6 +140,9 @@
                             <constraint firstItem="sM2-dh-4t6" firstAttribute="top" secondItem="u0B-w4-0d7" secondAttribute="bottom" constant="8" id="yil-3G-cde"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="entityTextField" destination="u0B-w4-0d7" id="3mP-VZ-RVZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D85-Jk-s7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		542D86FD1BFD2B6200986DAA /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542D86FC1BFD2B6200986DAA /* AddEditViewController.swift */; };
 		54B21CE41BFD16A200C5CF28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B21CE31BFD16A200C5CF28 /* AppDelegate.swift */; };
 		54B21CE61BFD16A200C5CF28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B21CE51BFD16A200C5CF28 /* ViewController.swift */; };
 		54B21CE91BFD16A200C5CF28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B21CE71BFD16A200C5CF28 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		542D86FC1BFD2B6200986DAA /* AddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		54B21CE01BFD16A200C5CF28 /* sixWeekChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sixWeekChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B21CE31BFD16A200C5CF28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54B21CE51BFD16A200C5CF28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				54B21CF51BFD1E7800C5CF28 /* EntityA.swift */,
 				54B21CF91BFD219700C5CF28 /* EntityB.swift */,
 				54B21CE71BFD16A200C5CF28 /* Main.storyboard */,
+				542D86FC1BFD2B6200986DAA /* AddEditViewController.swift */,
 				54B21CF71BFD1FAA00C5CF28 /* EntityController.swift */,
 				54B21CEA1BFD16A200C5CF28 /* Assets.xcassets */,
 				54B21CEC1BFD16A200C5CF28 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			files = (
 				54B21CF61BFD1E7800C5CF28 /* EntityA.swift in Sources */,
 				54B21CE61BFD16A200C5CF28 /* ViewController.swift in Sources */,
+				542D86FD1BFD2B6200986DAA /* AddEditViewController.swift in Sources */,
 				54B21CF81BFD1FAA00C5CF28 /* EntityController.swift in Sources */,
 				54B21CE41BFD16A200C5CF28 /* AppDelegate.swift in Sources */,
 				54B21CFA1BFD219700C5CF28 /* EntityB.swift in Sources */,

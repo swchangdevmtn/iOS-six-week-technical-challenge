@@ -10,6 +10,22 @@ import UIKit
 
 class AddEditViewController: UIViewController {
 
+    var entityA: EntityA?
+    
+    @IBOutlet weak var entityTextField: UITextField!
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        if let entityA = self.entityA{
+            entityA.name = self.entityTextField.text!
+        } else {
+            let newEntityA = EntityA(name: self.entityTextField.text!, pair: "Alone")
+            EntityController.sharedController.addEntityA(newEntityA)
+            self.entityA = newEntityA
+        }
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +37,12 @@ class AddEditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func updateWithEntry(entityA: EntityA) {
+        self.entityA = entityA
+        
+        self.entityTextField.text = entityA.name
+    }
+    
     /*
     // MARK: - Navigation
 

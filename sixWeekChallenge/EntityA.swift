@@ -8,36 +8,32 @@
 
 import Foundation
 
-class Entity: Equatable {
+class EntityA: Equatable {
     
-    private let listKey = "list"
     private let nameKey = "name"
     private let pairKey = "pair"
 
-    var list: String
     var name: String
     var pair: String
     
-    init(list: String, name: String, pair: String) {
-        self.list = list
+    init(name: String, pair: String) {
+       
         self.name = name
         self.pair = pair
     }
     
     init?(dictionary: Dictionary<String, AnyObject>) {
-        guard let list = dictionary[listKey] as? String,
-            let name = dictionary[nameKey] as? String,
+        guard let name = dictionary[nameKey] as? String,
         let pair = dictionary[pairKey] as? String else {
                 
                 // sets values for stored properties due to requirement as of Swift 2.0
-                self.list = ""
+            
                 self.name = ""
                 self.pair = ""
                 
                 return nil
         }
         
-        self.list = list
         self.name = name
         self.pair = pair
         
@@ -46,7 +42,6 @@ class Entity: Equatable {
     func dictionaryCopy() -> Dictionary<String, AnyObject> {
         
         let dictionary = [
-            listKey : self.list,
             nameKey : self.name,
             pairKey : self.pair
         ]
@@ -56,6 +51,6 @@ class Entity: Equatable {
 }
 
 
-func == (lhs: Entity, rhs: Entity) -> Bool {
+func == (lhs: EntityA, rhs: EntityA) -> Bool {
     return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

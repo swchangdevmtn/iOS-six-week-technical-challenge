@@ -12,12 +12,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableViewA: UITableView!
     
-    
-    @IBAction func randomButtonTapped(sender: AnyObject) {
+    @IBAction func pairButtonTapped(sender: AnyObject) {
         
-        //shuffle entitiesA
+        //pair all in entitiesA
         
     }
+    
+    @IBAction func randomButtonTapped(sender: AnyObject) {
+        EntityController.sharedController.entitiesA.shuffleInPlace()
+        tableViewA.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -69,5 +75,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+}
+
+// I take no credit for this
+extension MutableCollectionType where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffleInPlace() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in 0..<count - 1 {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            guard i != j else { continue }
+            swap(&self[i], &self[j])
+        }
+    }
 }
 
